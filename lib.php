@@ -34,7 +34,7 @@ function local_customgrader_extend_navigation_course($parentnode, $course, $cont
     }
  
     // Only let users with the appropriate capability see this settings item.
-    if (!has_capability('moodle/backup:backupcourse', context_course::instance($PAGE->course->id))) {
+    if (!has_capability('local/customgrader:index', context_course::instance($PAGE->course->id))) {
         return;
     }
  

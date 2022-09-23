@@ -25,3 +25,7 @@
  */
 
  $string['title'] = 'Calificador Personalizado';
+ $string['pluginname'] = 'Calificador Personalizado ASES';
+
+ 
+ $string['local/customgrader:index'] = 'Calificador Personalizado ASES';

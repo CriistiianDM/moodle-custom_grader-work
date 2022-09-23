@@ -14,7 +14,8 @@ if (!$course = $DB->get_record('course', array('id' => $courseid))) {
 require_login($course);
 
 $context = context_course::instance($course->id);
-require_capability('moodle/grade:manage', $context);
+
+require_capability('local/customgrader:index', $context);
 $PAGE->requires->jquery_plugin('ui');
 $PAGE->requires->css('/local/customgrader/style/vue-js-modal.css');
 // Moove have his own font awesome, if is required hear all icons crash
@@ -26,6 +27,7 @@ $PAGE->requires->css('/local/customgrader/style/vue-flex.css', true);
 $PAGE->requires->css('/local/customgrader/style/vue-toasted.css', true);
 $PAGE->requires->css('/local/customgrader/style/styles_grader.css', true);
 echo $OUTPUT->header();
+
 echo $OUTPUT->render_from_template('local_customgrader/grader.vue', null);
 
 $PAGE->requires->js_call_amd('local_customgrader/grader', 'init');

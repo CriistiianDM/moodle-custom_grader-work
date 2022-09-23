@@ -13,19 +13,22 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
 /**
- * Strings for local plugin 'customgrader', language 'en'
- *
- * @package   custom_grader
- * @copyright  2018 Camilo José Cruz Rivera <cruz.camilo@correounivalle.edu.co>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @author    Camilo José Cruz Rivera <cruz.camilo@correounivalle.edu.co>
- *
+ * @package     custom_grader
+ * @copyright   iger garcia & cristian machado mosquera 
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+defined('MOODLE_INTERNAL') || die();
 
- $string['title'] = 'Custom Grader';
- $string['pluginname'] = 'Custom Grader';
+$capabilities = array(
 
- 
- $string['local/customgrader:index'] = 'Custom Grader View';
+    'local/customgrader:index' => array(
+        'riskbitmask' => RISK_DATALOSS,
+        'contextlevel' => CONTEXT_COURSE,
+        'captype' => 'write',
+        'archetypes' => array(
+            'editingteacher' => CAP_ALLOW,
+        )
+    )
+    
+);
