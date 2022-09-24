@@ -28,4 +28,4 @@
  $string['pluginname'] = 'Calificador Personalizado ASES';
 
  
- $string['local/customgrader:index'] = 'Calificador Personalizado ASES';
+ $string['customgrader:index'] = 'Calificador Personalizado ASES';

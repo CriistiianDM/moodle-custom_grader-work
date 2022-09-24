@@ -28,6 +28,7 @@
 function local_customgrader_extend_navigation_course($parentnode, $course, $context) {
     global $CFG, $PAGE;
 
+
     // Only add this settings item on non-site course pages.
     if (!$PAGE->course or $PAGE->course->id == 1) {
         return;

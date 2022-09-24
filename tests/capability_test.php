@@ -3,12 +3,12 @@
 
 /**
  * Prueba Unitaria 
- * @author Cristian Duvan Machado Mosquera <cristian.machado@correounivalle.edu.co>
- * @dec Comprobar que que el capabilities en el archetypes sole le de permisos a los editingteacher
+ * @autor: Cristian Duvan Machado Mosquera <cristian.machado@correounivalle.edu.co>
+ * @des: Comprobar que que el capabilities en el archetypes sole le de permisos a los editingteacher
 */
 
 //definicion de la clase
-class CapabilityTest extends advanced_testcase {
+class capability_test extends advanced_testcase {
 
 
     /**
@@ -36,7 +36,7 @@ class CapabilityTest extends advanced_testcase {
 
         //genera un rol editingteacher es el rol que tiene permiso para usar el plugin y es 3
         //diferente de 3 es que no tiene permiso
-        $editingteacherroleid = 5;
+        $editingteacherroleid = 3;
 
 
         //asigna el rol al usuario
