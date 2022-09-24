@@ -26,6 +26,5 @@
 
  $string['title'] = 'Custom Grader';
  $string['pluginname'] = 'Custom Grader';
-
  
- $string['local/customgrader:index'] = 'Custom Grader View';
+ $string['customgrader:index'] = 'Custom Grader View';

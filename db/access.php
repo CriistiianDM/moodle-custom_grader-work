@@ -27,7 +27,7 @@ $capabilities = array(
         'contextlevel' => CONTEXT_COURSE,
         'captype' => 'write',
         'archetypes' => array(
-            'editingteacher' => CAP_ALLOW,
+            'editingteacher' => CAP_ALLOW
         )
     )
     
