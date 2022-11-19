@@ -38,12 +38,19 @@ class ases_interface
      */
     static function is_ases_by_mdl_id($mdl_id)
     {
-        global $DB;
-        return $DB->record_exists(
-            'talentospilos_user_extended',
-            array(
-                'id_moodle_user' => $mdl_id,
-                'tracking_status' => self::TRACKING_STATUS_ACTIVE
-            ));
+        //console.log en php
+
+    global $DB;
+    $sql_query_id_coherte_ases = "SELECT id  FROM mdl_cohort
+                        WHERE idnumber = 'ases_activos'";
+    
+    $id_cohorte_ases = $DB->get_record_sql($sql_query_id_coherte_ases)->id;
+
+    return $DB->record_exists(
+        'cohort_members',
+        array(
+            'userid' => $mdl_id,
+            'cohortid' => $id_cohorte_ases
+        ));
     }
 }

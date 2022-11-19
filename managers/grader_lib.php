@@ -30,8 +30,8 @@ require_once $CFG->libdir . '/gradelib.php';
 require_once $CFG->libdir . '/datalib.php';
 require_once $CFG->dirroot . '/grade/lib.php';
 require_once $CFG->dirroot . '/grade/report/user/lib.php';
-require_once $CFG->dirroot . '/blocks/ases/managers/lib/student_lib.php';
-require_once $CFG->dirroot . '/blocks/ases/managers/lib/lib.php';
+//require_once $CFG->dirroot . '/blocks/ases/managers/lib/student_lib.php';
+//require_once $CFG->dirroot . '/blocks/ases/managers/lib/lib.php';
 require_once $CFG->dirroot . '/grade/report/grader/lib.php';
 require_once $CFG->dirroot . '/grade/edit/tree/lib.php'; // grade_edit_tree
 require_once $CFG->libdir . '../../lib/gradelib.php';
@@ -56,16 +56,9 @@ function get_info_students($id_curso)
     $query_students = "SELECT usuario.id, usuario.firstname, usuario.lastname, usuario.username
     FROM {user} usuario INNER JOIN {user_enrolments} enrols ON usuario.id = enrols.userid
     INNER JOIN {enrol} enr ON enr.id = enrols.enrolid
-    INNER JOIN {course} curso ON enr.courseid = curso.id
-    WHERE curso.id= $id_curso AND usuario.id IN (SELECT user_m.id
-                                                FROM {user} user_m
-                                                INNER JOIN {talentospilos_user_extended} extended ON user_m.id = extended.id_moodle_user
-                                                INNER JOIN {talentospilos_usuario} user_t ON extended.id_ases_user = user_t.id
-                                                INNER JOIN {talentospilos_est_estadoases} estado_u ON user_t.id = estado_u.id_estudiante
-                                                INNER JOIN {talentospilos_estados_ases} estados ON estados.id = estado_u.id_estado_ases
-                                                WHERE estados.nombre = 'seguimiento')";
-
+    INNER JOIN {course} curso ON enr.courseid = curso.id";
     $estudiantes = $DB->get_records_sql($query_students);
+
     return $estudiantes;
 }
 
@@ -1149,6 +1142,7 @@ function getParentCategories($id_course, $id_element, $type)
 
 function send_email_alert($userid, $itemid, $grade, $courseid)
 {
+    /*
     global $USER;
     global $DB;
 
@@ -1293,5 +1287,6 @@ function send_email_alert($userid, $itemid, $grade, $courseid)
     }
 
     return $resp;
+    */
 
 }
